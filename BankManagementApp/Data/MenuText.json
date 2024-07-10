@@ -1,0 +1,26 @@
+[
+  {
+    "menuType": "welcomeMenu",
+    "menuOptions": [ "1. Register", "2. Login", "3. Exit" ],
+    "menuTexts": {
+      "preMenuText": "Welcome to HSBC",
+      "afterMenuOptionsText": "Please enter a choice to procceed:"
+    }
+  },
+  {
+    "menuType": "loginMenu",
+    "menuOptions": [ "1. Deposit", "2. Withdraw", "3. View Balance", "4. Logout", "5. Exit" ],
+    "menuTexts": {
+      "preMenuText": "Hello. Please choose one of the following options:",
+      "afterMenuOptionsText": "Please enter a choice to procceed:"
+    }
+  },
+  {
+    "menuType": "adminMenu",
+    "menuOptions": [ "1. View Customer Accounts", "2. Delete Customer Account", "3. Logout", "4. Exit" ],
+    "menuTexts": {
+      "preMenuText": "Hello. Please choose one of the following options:",
+      "afterMenuOptionsText": "Please enter a choice to procceed:"
+    }
+  }
+]

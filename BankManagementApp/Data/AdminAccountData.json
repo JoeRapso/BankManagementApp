@@ -1,0 +1,12 @@
+[
+  {
+    "AccountNumber": "12345678",
+    "Id": "admin1234",
+    "IsAdmin": true,
+    "FirstName": "Joe",
+    "LastName": "Test",
+    "Email": "joe.admin@.com",
+    "Username": "joe",
+    "Password": "123"
+  }
+]
