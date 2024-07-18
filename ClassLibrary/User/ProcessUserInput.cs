@@ -147,19 +147,56 @@ namespace ClassLibrary.User
         }
         public void GetAmount()
         {
+            Console.WriteLine("Amount:"); //Have this be done by other class?
             _userInput = _inputGetter.GetUserInput();
             _isUserInputValid = _userInputValidator.ValidateInputAmount(_userInput);
-
-            if( _isUserInputValid == true )
+            while (_isUserInputValid == false)
             {
-                Amount = int.Parse(_userInput);
+                _displayText.ShowText("You have entered something invalid, please try again."); // create the value differently?
+                if (_isUserInputValid == false)
+                {
+                    Console.WriteLine("Amount:");
+                }
+                _userInput = _inputGetter.GetUserInput();
+                _isUserInputValid = _userInputValidator.ValidateInputAmount(_userInput);
             }
-            else 
-            {
-
-            }
+            Amount = int.Parse(_userInput);
         }
 
+        public void GetWithdrawAmount(string id)
+        {
+            IUserDataChecker dataChecker = Factory.CreateDataChecker();
+            Console.WriteLine("Amount:"); //Have this be done by other class?
+            _userInput = _inputGetter.GetUserInput();
+            _isUserInputValid = _userInputValidator.ValidateInputAmount(_userInput);
+            bool isAmountWithdrawable = dataChecker.CheckBalance(id, _isUserInputValid is false ? 0 : int.Parse(_userInput));
+
+
+            while (_isUserInputValid == false || isAmountWithdrawable == false)
+            {
+
+                if (_isUserInputValid == false)
+                {
+                    //MessagesToUser.InvalidDepositOrWithdrawal();
+                    _displayText.ShowText("You have entered something invalid, please try again."); // create the value differently?
+                    Console.WriteLine("Amount:");
+                }
+                else if (isAmountWithdrawable == false)
+                {
+                    _displayText.ShowText("You don't have enough funds."); // create the value differently?
+                    Console.WriteLine("Amount:");
+
+                    //return 0;
+
+                }
+                _userInput = _inputGetter.GetUserInput();
+                _isUserInputValid = _userInputValidator.ValidateInputAmount(_userInput);
+                isAmountWithdrawable = dataChecker.CheckBalance(id, _isUserInputValid is false ? 0 : int.Parse(_userInput));
+
+            }
+
+            Amount = int.Parse(_userInput);
+        }
         public Dictionary<string, string> GetLoginDetails(IUserDataChecker dataChecker)
         {
             Dictionary<string, string> loginDetails = new Dictionary<string, string>();

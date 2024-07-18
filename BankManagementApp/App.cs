@@ -101,9 +101,9 @@ namespace BankManagementApp
                                     string withdraw = "Enter an amount you wish to withdraw.";
                                     displayText.ShowText(withdraw);
 
-                                    userInputProcessor.GetAmount();
+                                    userInputProcessor.GetWithdrawAmount(customer.Id);
 
-                                    customer.Withdraw(userInputProcessor.Amount);
+                                    //customer.Withdraw(userInputProcessor.Amount);
 
 
 

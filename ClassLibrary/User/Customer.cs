@@ -18,7 +18,7 @@ namespace ClassLibrary.User.User
             var customers = DataAccess.GetCustomerDataFromJson();
             var user = customers.Where(x => x.Id.Equals(this.Id)).FirstOrDefault();
             user.Balance += amount;
-            Balance += amount;
+            //Balance += amount;
 
             DataAccess.UpdateCustomerJsonData(customers);
         }
@@ -29,7 +29,7 @@ namespace ClassLibrary.User.User
 
             var user = customers.Where(x => x.Id.Equals(this.Id)).FirstOrDefault();
             user.Balance -= amount;
-            Balance -= amount;
+            //Balance -= amount;
 
             DataAccess.UpdateCustomerJsonData(customers);
 
