@@ -21,7 +21,6 @@ namespace ClassLibrary
             List<Customer> customers = JsonConvert.DeserializeObject<List<Customer>>(jsonString);
 
             customers.Add(customer);
-            //look at using the using keyword here
             jsonString = JsonConvert.SerializeObject(customers, Formatting.Indented);
             File.WriteAllText(fileName, jsonString);
         }

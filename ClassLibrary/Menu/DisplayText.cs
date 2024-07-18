@@ -14,13 +14,8 @@ namespace ClassLibrary.Menu
     public class DisplayText : IDisplayText
     {
         private readonly IText _text;
-        //private readonly ILogger _log;
-
-        //public List<string> Texts { get; set; }
-
         public DisplayText(IText text)
         {
-            //_log = log;
             _text = text;
         }
 
@@ -31,12 +26,9 @@ namespace ClassLibrary.Menu
 
         public MenuText ShowMenuText(string menuType, ClassLibrary.User.User.User? user = null)
         {
-            //MenuText menuText = LookUpMenuText(menuType);
             MenuText menuText = _text.ShowMenuText(menuType, user);
 
             return menuText;
         }
-
-
     }
 }

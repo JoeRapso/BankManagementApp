@@ -53,12 +53,8 @@ namespace ClassLibrary.Menu
 
             try
             {
-                //var file = Path.Combine(Directory.GetCurrentDirectory(), "MenuText.json");
-
-                //look to get the file path without hardcoding.
                 List<MenuText> menuTextsets = JsonSerializer.Deserialize<List<MenuText>>(
-                    File.ReadAllText(path: "C:\\My Projects\\BankManagementCopy\\BankManagement\\BankManagementApp\\Data\\MenuText.json"), options
-                );
+                    File.ReadAllText(path: "C:\\My Projects\\BankManagementCopy\\BankManagement\\BankManagementApp\\Data\\MenuText.json"), options);
 
                 MenuText? menuText = menuTextsets.Where(x => x.MenuType.Equals(menuType)).FirstOrDefault();
 

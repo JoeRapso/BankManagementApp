@@ -11,7 +11,5 @@ namespace ClassLibrary.Models
         public string MenuType { get; set; }
         public List<string> MenuOptions { get; set; }
         public Dictionary<string, string> MenuTexts { get; set; }
-
-
     }
 }

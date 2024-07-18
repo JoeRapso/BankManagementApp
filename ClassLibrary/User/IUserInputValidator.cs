@@ -10,9 +10,7 @@ namespace ClassLibrary.User
     {
         internal bool ValidateUserMenuChoice(string input, int numberOfMenuOptions);
         internal bool ValidateRegistrationOrLoginDetails(string input);
-
         internal bool ValidateEmailFormat(string input);
-
         internal bool ValidateInputAmount(string input);
     }
 }

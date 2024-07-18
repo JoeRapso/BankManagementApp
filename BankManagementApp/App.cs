@@ -19,13 +19,10 @@ namespace BankManagementApp
     {
         public void Run()
         {
-            //IMenuOptions menuOptions = Factory.CreateMenu();
-            //IMenuMessages menuMessages = Factory.CreateMessages();
             IRegister register = Factory.CreateRegistration();
             IUserDataChecker dataChecker = Factory.CreateDataChecker();
 
             var loggerFactory = (ILoggerFactory)new LoggerFactory();
-            //loggerFactory.AddSerilog(serilogLogger);
             var logger = loggerFactory.CreateLogger<Text>();
 
 
@@ -41,10 +38,7 @@ namespace BankManagementApp
                 {
                     
                     string menuType = "welcomeMenu";
-                    
-
                     var menuText = displayText.ShowMenuText(menuType);
-
                     var inputGetter = Factory.CreateUserInputGetter();
                     var userInputValidator = Factory.CreateUserInputValidator();
                     var userInputProcessor = (ProcessUserInput)Factory.CreateUserInputProcessor(inputGetter, userInputValidator, displayText); //maybe not use casting?
@@ -116,14 +110,11 @@ namespace BankManagementApp
                                     if (userInputProcessor.Amount != 0)
                                     {
                                         customer.Withdraw(userInputProcessor.Amount);
-
                                         displayText.ShowText("Your money has been succesfully withdrawn.");
                                     }
                                 }
                                 else if (userInputProcessor.SelectedMenuOption == 3)
                                 {
-
-
                                     int amount = customer.DisplayBalance();
                                     displayText.ShowText($"You have ${amount} in your bank account");
                                 }
@@ -148,9 +139,6 @@ namespace BankManagementApp
                             bool adminHasNotExitedOrLoggedOut = false;
                             while (!adminHasNotExitedOrLoggedOut)
                             {
-
-                                //menuMessages.LoggedIn(user, menuOptions.LoggedInAdminOptions());
-                                //string loggedInChoice = UserInputProcessor.GetLoggedInChoice(menuOptions.LoggedInAdminOptions());
                                 string adminMenu = "adminMenu";
                                 var adminMenuText = displayText.ShowMenuText(adminMenu, user);
                                 userInputProcessor.getUserInput();
@@ -166,7 +154,6 @@ namespace BankManagementApp
                                 }
                                 else if (userInputProcessor.SelectedMenuOption == 3)
                                 {
-                                    //welcomeChoice = string.Empty;
                                     adminHasNotExitedOrLoggedOut = true;
                                     userGoesBack = true;
                                 }
@@ -185,12 +172,8 @@ namespace BankManagementApp
                         userExited = true;
                         return;
                     }
-
-
                 }
-
             }
-
         }
     }
 }

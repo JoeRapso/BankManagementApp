@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Login.Login
 {
-    public interface ILogin //: IUserDataChecker
+    public interface ILogin
     {
         ClassLibrary.User.User.User LogInUser(IProcessUserInput userInputProcessor, IUserDataChecker dataChecker);
     }

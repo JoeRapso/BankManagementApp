@@ -9,7 +9,6 @@ namespace ClassLibrary.User
     public interface IAdminActions
     {
         public void ViewCustomerAccounts();
-
         public void DeleteCustomerAccount();
     }
 }

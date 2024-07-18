@@ -9,7 +9,6 @@ namespace ClassLibrary.User
     public class UserInputGetter : IUserInputGetter
     {
         private string?  _input;
-      
         string IUserInputGetter.GetUserInput()
         {
             _input = Console.ReadLine();

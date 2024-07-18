@@ -27,7 +27,7 @@ namespace ClassLibrary.User
         public bool CheckIfCustomerExists(string username, string id, string accountNumber)
         {
             var customers = DataAccess.GetCustomerDataFromJson();
-            Customer selectedUser;//;= customers.Where(x => x.Username.Equals(customer["Username"])).FirstOrDefault();
+            Customer selectedUser;
 
             if (username != null)
             {
@@ -57,15 +57,6 @@ namespace ClassLibrary.User
                     return false;
                 }
             }
-            //var user = customers.Where(x => x.Username.Equals(customer["Username"]) || x.Id.Equals(customer["Id"]) || x.AccountNumber.Equals(customer["accountNumber"])).FirstOrDefault();
-            //string? customerId = customers.Where(x => x.Id.Equals(input)).FirstOrDefault();
-
-
-            //if (selectedUser == null) 
-            //{
-            //    return false;
-            //}
-
             return true;
         }
 

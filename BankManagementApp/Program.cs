@@ -1,6 +1,4 @@
-﻿
-
-using BankManagementApp;
+﻿using BankManagementApp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

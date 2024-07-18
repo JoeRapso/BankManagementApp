@@ -14,16 +14,6 @@ namespace BankManagementApp
 {
     public static class Factory
     {
-        //public static IMenuOptions CreateMenu()
-        //{
-        //    return new MenuOptions();
-        //}
-
-        //public static IMenuMessages CreateMessages()
-        //{
-        //    return new MenuMessages();
-        //}
-
         public static IRegister CreateRegistration()
         {
             return new Register();
@@ -73,15 +63,5 @@ namespace BankManagementApp
         {
             return new ProcessUserInput(userInputGetter, userInputValidator, displayText);
         }
-
-        //public static IAuthorisation CreateLogin() 
-        //{ 
-        //    return new Login();
-        //}
-
-        //public static ICustomerActions CreateUser()
-        //{
-        //    return new Customer();
-        //}
     }
 }
